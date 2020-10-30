@@ -36,3 +36,8 @@ String.prototype.toKey = function(separator) {
 
     return str
 }
+
+/** Get a random hex color. */
+function randomHexColor() {
+    return `#${Math.floor(Math.random() * 16**6).toString(16).padStart(6, '0')}`
+}
