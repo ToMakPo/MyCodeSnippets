@@ -41,3 +41,21 @@ String.prototype.toKey = function(separator) {
 function randomHexColor() {
     return `#${Math.floor(Math.random() * 16**6).toString(16).padStart(6, '0')}`
 }
+
+/** Get a random integer between min (inclusive) and max (inclusive).
+ * 
+ * @param {number} max The larger of the two numbers
+ * @param {number} min The smaller of the two numbers
+ */
+function randomInt(max, min=0) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+
+    if (min > max) {
+        var temp = min
+        min = max
+        max = temp
+    }
+
+    return Math.floor(Math.random() * (max - min + 1) + min);  
+}
