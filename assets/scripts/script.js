@@ -11,4 +11,6 @@ $('.copyable')
             $temp.remove()
         }
     })
-    .append($('<button>').text('⯐'))
+    .append($('<button>'))
+
+$('.doc').attr('tabindex', '0')

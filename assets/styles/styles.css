@@ -30,24 +30,31 @@ main .copyable code {
 
 main .copyable button {
   position: absolute;
-  top: 0;
+  top: 50%;
   right: 0.5rem;
-  color: #26767e;
-  background: transparent;
+  transform: translateY(-50%);
+  background-color: #b9e5ea;
+  background-image: url(../images/target.svg);
+  background-size: 1.5rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0.5rem;
+  width: 2rem;
+  height: 2rem;
   border: 0;
   border-radius: 0.25rem;
   font-size: 1.5rem;
   cursor: copy;
-  transition: color 0.15s;
+  transition: background-color 0.35s;
 }
 
 main .copyable button:focus, main .copyable button:hover {
   outline: none;
-  color: black;
+  background-color: #6bc9d2;
 }
 
 main .copyable button:active {
-  color: #26767e;
+  background-color: #92d7de;
 }
 
 main .snippet {
@@ -67,18 +74,14 @@ main .snippet .input-output {
 }
 
 main .doc {
-  tabindex: "0";
   margin: 1rem 0;
   border-left: 3px solid #26767e;
   padding: 0.5rem;
 }
 
 main .doc:focus, main .doc:hover {
+  outline: none;
   background: #dddd;
-}
-
-main .doc:focus {
-  background: #f00;
 }
 
 main .doc h3 {
