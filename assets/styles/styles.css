@@ -38,6 +38,16 @@ main .copyable button {
   border-radius: 0.25rem;
   font-size: 1.5rem;
   cursor: copy;
+  transition: color 0.15s;
+}
+
+main .copyable button:focus, main .copyable button:hover {
+  outline: none;
+  color: black;
+}
+
+main .copyable button:active {
+  color: #26767e;
 }
 
 main .snippet {
@@ -57,13 +67,30 @@ main .snippet .input-output {
 }
 
 main .doc {
+  tabindex: "0";
   margin: 1rem 0;
   border-left: 3px solid #26767e;
-  padding-left: 0.5rem;
+  padding: 0.5rem;
+}
+
+main .doc:focus, main .doc:hover {
+  background: #dddd;
+}
+
+main .doc:focus {
+  background: #f00;
 }
 
 main .doc h3 {
   font-family: monospace;
   font-size: 1.35rem;
   text-decoration-line: underline;
+}
+
+main .doc > :first-child {
+  margin-top: 0;
+}
+
+main .doc > :last-child {
+  margin-bottom: 0;
 }
