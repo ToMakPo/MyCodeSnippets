@@ -21,11 +21,16 @@ main .copyable {
   padding: 1rem;
   background-color: #b9e5ea;
   position: relative;
+  transition: background-color 0.35s;
 }
 
 main .copyable code {
   font-family: monospace;
   color: #26767e;
+}
+
+main .copyable:hover, main .copyable:hover button {
+  background-color: #a5dee4;
 }
 
 main .copyable button {
