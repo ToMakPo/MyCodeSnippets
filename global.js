@@ -31,7 +31,7 @@ String.prototype.toKey = function(separator) {
 
     if (separator == '') str = str.toProperCase()
 
-    str = str.replace(' ', separator || '').replace(/[^0-9a-zA-Z_]/g, '')
+    str = str.replace(' ', separator || '').replace(/[^0-9a-zA-Z_\-]/g, '')
     str = str[0].toLowerCase() + str.substr(1)
 
     return str
