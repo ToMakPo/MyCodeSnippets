@@ -1,0 +1,70 @@
+html {
+  min-width: 320px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 0.25rem;
+}
+
+main section {
+  margin: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  background-color: #eee;
+}
+
+main .copyable {
+  font-family: monospace;
+  padding: 1rem;
+  background-color: #b9e5ea;
+  position: relative;
+}
+
+main .copyable code {
+  font-family: monospace;
+  color: #26767e;
+}
+
+main .copyable button {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+  color: #26767e;
+  background: transparent;
+  border: 0;
+  border-radius: 0.25rem;
+  font-size: 1.5rem;
+  cursor: copy;
+}
+
+main .snippet {
+  font-family: monospace;
+  padding: 1rem;
+  background-color: white;
+  position: relative;
+}
+
+main .snippet pre {
+  padding: 0;
+  margin: 0;
+}
+
+main .snippet .input-output {
+  color: #999;
+}
+
+main .doc {
+  margin: 1rem 0;
+  border-left: 3px solid #26767e;
+  padding-left: 0.5rem;
+}
+
+main .doc h3 {
+  font-family: monospace;
+  font-size: 1.35rem;
+  text-decoration-line: underline;
+}

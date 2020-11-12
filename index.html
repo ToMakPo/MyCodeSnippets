@@ -4,19 +4,158 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyAPIs</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="./layout.css">
+    <link rel="stylesheet" href="./assets/styles/styles.css">
 </head>
 <body>
-    <section id="JavaScript" class="container">
-        <h2 class="row">JavaScript</h2>
-        <div class="row copyable">Link: 
-            <code>https://tomakpo.github.io/MyAPIs/global.js</code> 
-            <button></button>
-        </div>
-    </section>
+    <main>
+        <section id="js-section">
+            <h2>JavaScript</h2>
+            <div id="global">
+                <h3>Global.js</h3>
+
+                <div>
+                    <div class="copyable" data-label="Link">
+                        <div>&lt;script src="https://tomakpo.github.io/MyAPIs/global.js"&gt;&lt;/script&gt;</div> 
+                    </div>
+                </div>
+
+                <!-- toTitleCase -->
+                <div id="js_toTitleCase" class="doc">
+                    <h3>String.prototype.toTitleCase()</h3>
+                    <p>Convert the string to title case.</p>
+                    <div class="snippet">
+<pre>
+var output = input.toTitleCase()
+</pre><br>
+<pre class="input-output">
+input:  'harry potter and the chamber of secrets'
+output: 'Harry Potter and the Chamber of Secrets'
+</pre>
+                    </div>
+                    <p>Notice certain words like "and" and "the" are not set to uppercase.</p>
+                </div>
+
+                <!-- toProperCase -->
+                <div id="js_toProperCase" class="doc">
+                    <h3>String.prototype.toProperCase()</h3>
+                    <p>Convert the string to proper case.</p>
+                    <div class="snippet">
+<pre>
+var output = input.toProperCase()
+</pre><br>
+<pre class="input-output">
+input:  'harry potter and the chamber of secrets'
+output: 'Harry Potter And The Chamber Of Secrets'
+</pre>
+                    </div>
+                    <p>Notice all words are set to uppercase.</p>
+                </div>
+
+                <!-- toKey -->
+                <div id="js_toKey" class="doc">
+                    <h3>String.prototype.toKey([separator])</h3>
+                    <p>Convert the string to an object key.</p>
+                    <div class="snippet">
+<pre>
+var output = input.toKey()
+</pre><br>
+<pre class="input-output">
+input:  'First Name'
+output: 'firstName'
+</pre>
+                    </div>
+                    <p>
+                        If no separator is provided or the separator is "", then the key will be 
+                        convereted to camel case.
+                    </p>
+                    <p>
+                        If a separator is provided, then it will be converted to lower case and the 
+                        white space will be replaced with the separator.
+                    </p>
+                    <div class="snippet">
+<pre>
+var output = input.toKey('-')
+</pre><br>
+<pre class="input-output">
+input:  'First Name'
+output: 'first-name'
+</pre>
+                    </div>
+                </div>
+
+                <!-- randomHexColor -->
+                <div id="js_randomHexColor" class="doc">
+                    <h3>randomHexColor()</h3>
+                    <p>Get a random hex color.</p>
+                    <div class="snippet">
+<pre>
+var output = randomHexColor()
+</pre><br>
+<pre class="input-output">
+output: '#fbe101'
+</pre>
+                    </div>
+                    <p>The output will be different each time.</p>
+                </div>
+
+                <!-- randomInt -->
+                <div id="js_randomInt" class="doc">
+                    <h3>randomInt(max[, min])</h3>
+                    <p>Get a random integer between min (inclusive) and max (inclusive).</p>
+                    <div class="snippet">
+<pre>
+var output = randomInt(max, min)
+</pre><br>
+<pre class="input-output">
+max:    6
+min:    1
+output: 3 
+//Could be any of these: [1, 2, 3, 4, 5, 6]
+</pre>
+                    </div>
+                    <p>The output will be different each time and can be any of the other integers.</p>
+                    <p>If you leave off the 'min' paramater, then it will assume the min is 0.</p>
+                    <div class="snippet">
+<pre>
+var output = randomInt(max)
+</pre><br>
+<pre class="input-output">
+max:    6
+output: 4
+//Could be any of these: [0, 1, 2, 3, 4, 5, 6]
+</pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="css-section">
+            <h2>Styles</h2>
+
+            <div id="layout">
+                <h3>Layout.css</h3>
+                <div>
+                    <div class="copyable" data-label="Link">
+                        <div>&lt;link rel="stylesheet" href="https://tomakpo.github.io/MyAPIs/layout.css"&gt;</div> 
+                    </div>
+                </div>
+
+                <!-- .hidden -->
+                <div id="css_hidden" class="doc">
+                    <h3>.hidden</h3>
+                    <p>Any element with the class 'hidden' will be removed from the DOM.</p>
+                    <div class="snippet">
+                        <pre>display: none !important;</pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script src="./assets/scripts/script.js"></script>
+    <script src="./global.js"></script>
 </body>
 </html>
