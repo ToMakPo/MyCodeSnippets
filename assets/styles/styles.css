@@ -35,9 +35,10 @@ main .copyable button {
   transform: translateY(-50%);
   background-color: #b9e5ea;
   background-image: url(../images/target.svg);
-  background-size: 1.5rem;
+  background-size: 1.25rem;
   background-position: center;
   background-repeat: no-repeat;
+  opacity: 0.5;
   padding: 0.5rem;
   width: 2rem;
   height: 2rem;
@@ -51,6 +52,7 @@ main .copyable button {
 main .copyable button:focus, main .copyable button:hover {
   outline: none;
   background-color: #6bc9d2;
+  opacity: 1;
 }
 
 main .copyable button:active {
