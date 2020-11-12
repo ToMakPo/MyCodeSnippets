@@ -11,5 +11,4 @@ $('.copyable')
             $temp.remove()
         }
     })
-    .append($('<button>').text('⌯'))
-    // .append($('<button>').text('+'))
+    .append($('<button>').text('⯐'))
