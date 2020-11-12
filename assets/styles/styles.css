@@ -30,9 +30,8 @@ main .copyable code {
 
 main .copyable button {
   position: absolute;
-  top: 50%;
+  top: 0;
   right: 0.5rem;
-  transform: translateY(-50%);
   color: #26767e;
   background: transparent;
   border: 0;
