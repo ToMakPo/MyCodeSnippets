@@ -1,5 +1,5 @@
 html {
-  min-width: 320px;
+  min-width: 500px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -17,34 +17,31 @@ main section {
 }
 
 main .copyable {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-family: monospace;
-  padding: 1rem;
   background-color: #b9e5ea;
-  position: relative;
   transition: background-color 0.35s;
 }
 
-main .copyable code {
-  font-family: monospace;
-  color: #26767e;
-}
-
-main .copyable:hover, main .copyable:hover button {
+main .copyable:hover {
   background-color: #a5dee4;
 }
 
+main .copyable div {
+  padding: 1rem;
+}
+
 main .copyable button {
-  position: absolute;
-  top: 50%;
-  right: 0.5rem;
-  transform: translateY(-50%);
-  background-color: #b9e5ea;
+  background-color: inherit;
   background-image: url(../images/target.svg);
   background-size: 1.25rem;
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0.5;
   padding: 0.5rem;
+  margin: 0.5rem;
   width: 2rem;
   height: 2rem;
   border: 0;
