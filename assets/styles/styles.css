@@ -16,7 +16,7 @@ main section {
   background-color: #eee;
 }
 
-main .copyable {
+main section .copyable {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,15 +25,15 @@ main .copyable {
   transition: background-color 0.35s;
 }
 
-main .copyable:hover {
+main section .copyable:hover {
   background-color: #a5dee4;
 }
 
-main .copyable div {
+main section .copyable div {
   padding: 1rem;
 }
 
-main .copyable button {
+main section .copyable button {
   background-color: inherit;
   background-image: url(../images/target.svg);
   background-size: 1.25rem;
@@ -51,53 +51,53 @@ main .copyable button {
   transition: background-color 0.35s;
 }
 
-main .copyable button:focus, main .copyable button:hover {
+main section .copyable button:focus, main section .copyable button:hover {
   outline: none;
   background-color: #6bc9d2;
   opacity: 1;
 }
 
-main .copyable button:active {
+main section .copyable button:active {
   background-color: #92d7de;
 }
 
-main .snippet {
+main section .snippet {
   font-family: monospace;
   padding: 1rem;
   background-color: white;
   position: relative;
 }
 
-main .snippet pre {
+main section .snippet pre {
   padding: 0;
   margin: 0;
 }
 
-main .snippet .input-output {
+main section .snippet .input-output {
   color: #999;
 }
 
-main .doc {
+main section .doc {
   margin: 1rem 0;
   border-left: 3px solid #26767e;
   padding: 0.5rem;
 }
 
-main .doc:focus, main .doc:hover {
+main section .doc:focus, main section .doc:hover {
   outline: none;
   background: #dddd;
 }
 
-main .doc h3 {
+main section .doc h3 {
   font-family: monospace;
   font-size: 1.35rem;
   text-decoration-line: underline;
 }
 
-main .doc > :first-child {
+section > *:first-child, .doc:first-child, .doc > *:first-child {
   margin-top: 0;
 }
 
-main .doc > :last-child {
+section > *:last-child, .doc:last-child, .doc > *:last-child {
   margin-bottom: 0;
 }
