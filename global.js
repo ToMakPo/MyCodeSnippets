@@ -59,3 +59,15 @@ function randomInt(max, min=0) {
 
     return Math.floor(Math.random() * (max - min + 1) + min);  
 }
+
+/** Copy a value to the clipboard.
+  * 
+  * @param {any} value The value to be copyed to the clipboard.
+  */
+function copy(value) {
+    var $temp = $('<input>')
+    $('body').append($temp)
+    $temp.val(value.toString()).select()
+    document.execCommand('copy')
+    $temp.remove()
+}
