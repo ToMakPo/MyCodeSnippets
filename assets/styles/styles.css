@@ -1,6 +1,7 @@
 html {
   min-width: 500px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
 }
 
 main {
