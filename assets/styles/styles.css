@@ -51,12 +51,12 @@ main section .copyable button {
 
 main section .copyable button:focus, main section .copyable button:hover {
   outline: none;
-  background-color: #6bc9d2;
+  background-color: #57c2cc;
   opacity: 1;
 }
 
 main section .copyable button:active {
-  background-color: #92d7de;
+  background-color: #7ed0d8;
 }
 
 main section .snippet {
@@ -203,7 +203,7 @@ main section .code-block button {
   background-size: 1.25rem;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.5;
+  opacity: 0.25;
   padding: 0.5rem;
   margin: 0.5rem;
   width: 2rem;
@@ -213,7 +213,6 @@ main section .code-block button {
   font-size: 1.5rem;
   cursor: copy;
   transition: background-color 0.35s;
-  z-index: 99;
 }
 
 main section .code-block button:focus, main section .code-block button:hover {
