@@ -23,14 +23,12 @@ main section .copyable {
   font-family: monospace;
   background-color: #b9e5ea;
   transition: background-color 0.35s;
+  white-space: pre-wrap;
+  padding: 0.1rem 0 0.1rem 1rem;
 }
 
 main section .copyable:hover {
   background-color: #a5dee4;
-}
-
-main section .copyable div {
-  padding: 1rem;
 }
 
 main section .copyable button {
@@ -62,19 +60,63 @@ main section .copyable button:active {
 }
 
 main section .snippet {
-  font-family: monospace;
-  padding: 1rem;
-  background-color: white;
   position: relative;
-}
-
-main section .snippet pre {
-  padding: 0;
-  margin: 0;
+  padding: 1rem;
+  box-shadow: inset 0 0 5px #ddd;
+  border: 1px solid #ccc;
+  position: relative;
+  background: #fff;
+  color: #666;
+  overflow-x: auto;
+  display: block;
 }
 
 main section .snippet .input-output {
   color: #999;
+}
+
+main section .snippet .hljs-keyword, main section .snippet .hljs-literal, main section .snippet .hljs-selector-id, main section .snippet .hljs-selector-tag {
+  color: #93c763;
+}
+
+main section .snippet .hljs-number {
+  color: #d3be7b;
+}
+
+main section .snippet .hljs-attribute {
+  color: #668bb0;
+}
+
+main section .snippet .hljs-class .hljs-title, main section .snippet .hljs-code, main section .snippet .hljs-section {
+  color: #642f2f;
+}
+
+main section .snippet .hljs-link, main section .snippet .hljs-regexp {
+  color: #d39745;
+}
+
+main section .snippet .hljs-meta {
+  color: #557182;
+}
+
+main section .snippet .hljs-addition, main section .snippet .hljs-built_in, main section .snippet .hljs-bullet, main section .snippet .hljs-emphasis, main section .snippet .hljs-name, main section .snippet .hljs-selector-attr, main section .snippet .hljs-selector-pseudo, main section .snippet .hljs-subst, main section .snippet .hljs-tag, main section .snippet .hljs-template-tag, main section .snippet .hljs-template-variable, main section .snippet .hljs-type, main section .snippet .hljs-variable {
+  color: #6d978b;
+}
+
+main section .snippet .hljs-string, main section .snippet .hljs-symbol {
+  color: #75a1da;
+}
+
+main section .snippet .hljs-comment, main section .snippet .hljs-deletion, main section .snippet .hljs-quote {
+  color: #6e790cab;
+}
+
+main section .snippet .hljs-selector-class {
+  color: #a082bd;
+}
+
+main section .snippet .hljs-doctag, main section .snippet .hljs-keyword, main section .snippet .hljs-literal, main section .snippet .hljs-name, main section .snippet .hljs-section, main section .snippet .hljs-selector-tag, main section .snippet .hljs-strong, main section .snippet .hljs-title, main section .snippet .hljs-type {
+  font-weight: 700;
 }
 
 main section .doc {
@@ -96,30 +138,91 @@ main section .doc h3 {
 }
 
 main section .code-block {
-  font-family: monospace;
-  padding: 1rem;
-  box-shadow: inset 0 0 10px #111;
-  background-color: #555;
-  color: #ddd;
   position: relative;
 }
 
-main section .code-block * {
-  padding: 0;
-  margin: 0;
-  white-space: pre-wrap;
+main section .code-block > span {
+  padding: 1rem;
+  box-shadow: inset 0 0 10px #111;
+  background: #494949;
+  color: #eee;
+  overflow-x: auto;
+  display: block;
 }
 
-main section .code-block .f-comment {
-  color: #79ca6b;
+main section .code-block > span .hljs-keyword, main section .code-block > span .hljs-literal, main section .code-block > span .hljs-selector-id, main section .code-block > span .hljs-selector-tag {
+  color: #93c763;
 }
 
-main section .code-block .f-block-comment {
-  color: #65a859;
+main section .code-block > span .hljs-number {
+  color: #ffcd22;
 }
 
-main section .code-block .f-key-word {
-  color: #70d3d6;
+main section .code-block > span .hljs-attribute {
+  color: #668bb0;
+}
+
+main section .code-block > span .hljs-class .hljs-title, main section .code-block > span .hljs-code, main section .code-block > span .hljs-section {
+  color: #fff;
+}
+
+main section .code-block > span .hljs-link, main section .code-block > span .hljs-regexp {
+  color: #d39745;
+}
+
+main section .code-block > span .hljs-meta {
+  color: #557182;
+}
+
+main section .code-block > span .hljs-addition, main section .code-block > span .hljs-built_in, main section .code-block > span .hljs-bullet, main section .code-block > span .hljs-emphasis, main section .code-block > span .hljs-name, main section .code-block > span .hljs-selector-attr, main section .code-block > span .hljs-selector-pseudo, main section .code-block > span .hljs-subst, main section .code-block > span .hljs-tag, main section .code-block > span .hljs-template-tag, main section .code-block > span .hljs-template-variable, main section .code-block > span .hljs-type, main section .code-block > span .hljs-variable {
+  color: #8cbbad;
+}
+
+main section .code-block > span .hljs-string, main section .code-block > span .hljs-symbol {
+  color: #75a1da;
+}
+
+main section .code-block > span .hljs-comment, main section .code-block > span .hljs-deletion, main section .code-block > span .hljs-quote {
+  color: #cadf10ab;
+}
+
+main section .code-block > span .hljs-selector-class {
+  color: #a082bd;
+}
+
+main section .code-block > span .hljs-doctag, main section .code-block > span .hljs-keyword, main section .code-block > span .hljs-literal, main section .code-block > span .hljs-name, main section .code-block > span .hljs-section, main section .code-block > span .hljs-selector-tag, main section .code-block > span .hljs-strong, main section .code-block > span .hljs-title, main section .code-block > span .hljs-type {
+  font-weight: 700;
+}
+
+main section .code-block button {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  background-color: #dddd;
+  background-image: url(../images/target.svg);
+  background-size: 1.25rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  border-radius: 0.25rem;
+  font-size: 1.5rem;
+  cursor: copy;
+  transition: background-color 0.35s;
+  z-index: 99;
+}
+
+main section .code-block button:focus, main section .code-block button:hover {
+  outline: none;
+  opacity: 1;
+}
+
+main section .code-block button:active {
+  background-color: #92d7de;
 }
 
 section > *:first-child, .doc:first-child, .doc > *:first-child {

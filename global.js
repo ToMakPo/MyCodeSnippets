@@ -88,7 +88,7 @@ function clamp(number, min, max) {
   * @param {any} value The value to be copyed to the clipboard.
   */
 function copy(value) {
-    var $temp = $('<input>')
+    var $temp = $('<textarea>')
     $('body').append($temp)
     $temp.val(value.toString()).select()
     document.execCommand('copy')

@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyAPIs</title>
+
     <link rel="shortcut icon" href="./assets/images/icon.svg" type="image/svg">
+
+    <!-- STYLES -->
     <link rel="stylesheet" href="./layout.css">
     <link rel="stylesheet" href="./assets/styles/styles.css">
 </head>
@@ -15,37 +18,28 @@
 
             <div id="global">
                 <h3>Global.js</h3>
-                
-                <div>
-                    <div class="copyable" data-label="Link">
-                        <div>&lt;script src="https://tomakpo.github.io/MyAPIs/global.js"&gt;&lt;/script&gt;</div>
-                    </div>
-                </div>
+
+                <pre class="copyable" data-lang="html">&lt;script src="https://tomakpo.github.io/MyAPIs/global.js"&gt;&lt;/script&gt;</pre>
 
                 <!-- toTitleCase -->
                 <div id="js_toTitleCase" class="doc">
                     <h3>String.prototype.toTitleCase()</h3>
-
                     <p>Convert the string to title case.</p>
 
-                    <div class="snippet">
-<pre>
+<pre class="snippet js">
 var output = input.toTitleCase()
-</pre><br>
-<pre class="input-output">
+<span class="input-output">
 input:  'harry potter and the chamber of secrets'
 output: 'Harry Potter and the Chamber of Secrets'
-</pre>
-                    </div>
+</span></pre>
 
                     <p>Notice certain words like "and" and "the" are not set to uppercase.</p>
 
-                    <div class="code-block">
-<div>/** Convert the string to title case */
+<pre class="code-block js">
+/** Convert the string to title case */
 String.prototype.toTitleCase = function() {
     let exceptions = ['a', 'an', 'the', 'in', 'of', 'and', 'but', 'or', 'for', 'nor', 'yet', 'so', 'at', 'by', 'on', 'to', 'up', 'as']
     
-    var x = 5 // test
     let words = this.toLowerCase().split(' ')
     let len = words.length
     for (let i = 0; i &lt; len; i++) {
@@ -54,76 +48,62 @@ String.prototype.toTitleCase = function() {
     }
 
     return words.join(' ')
-}</div>
-                    </div>
+}</pre>
                 </div>
 
                 <!-- toProperCase -->
                 <div id="js_toProperCase" class="doc">
                     <h3>String.prototype.toProperCase()</h3>
-
                     <p>Convert the string to proper case.</p>
 
-                    <div class="snippet">
-<pre>
+<pre class="snippet js">
 var output = input.toProperCase()
-</pre><br>
-<pre class="input-output">
+<span class="input-output">
 input:  'harry potter and the chamber of secrets'
 output: 'Harry Potter And The Chamber Of Secrets'
-</pre>
-                    </div>
+</span></pre>
 
                     <p>Notice all words are set to uppercase.</p>
-                    
-                    <div class="code-block">
-<div>/** Convert the string to proper case. */
+
+<pre class="code-block js">
+/** Convert the string to proper case. */
 String.prototype.toProperCase = function() {
     return this.replace(/\w\S*/g, txt =&gt; {
         return txt[0].toUpperCase() + txt.substr(1).toLowerCase();
     })
-}</div>
-                    </div>
+}</pre>
                 </div>
 
                 <!-- toKey -->
                 <div id="js_toKey" class="doc">
                     <h3>String.prototype.toKey([separator])</h3>
-
                     <p>Convert the string to an object key.</p>
 
-                    <div class="snippet">
-<pre>
+<pre class="snippet js">
 var output = input.toKey()
-</pre><br>
-<pre class="input-output">
+<span class="input-output">
 input:  'First Name'
 output: 'firstName'
-</pre>
-                    </div>
+</span></pre>
 
                     <p>
                         If no separator is provided or the separator is "", then the key will be 
                         convereted to camel case.
                     </p>
-
                     <p>
                         If a separator is provided, then it will be converted to lower case and the 
                         white space will be replaced with the separator.
                     </p>
                     
-                    <div class="snippet">
-<pre>
+<pre class="snippet js">
 var output = input.toKey('-')
-</pre><br>
-<pre class="input-output">
+<span class="input-output">
 input:  'First Name'
 output: 'first-name'
-</pre>
-                    </div>
-                    <br>
-                    <div class="code-block">
-<div>/** Convert the string to an object key.
+</span></pre>
+
+<pre class="code-block js">
+/** Convert the string to an object key.
 * 
 * @param {string} [separator] A string used to separate one word from the next in the resulting String. 
 * If omitted, the words are converted to camel case.
@@ -140,70 +120,56 @@ String.prototype.toKey = function(separator) {
     str = str[0].toLowerCase() + str.substr(1)
 
     return str
-}</div>
-                    </div>
+}</pre>
                 </div>
 
                 <!-- randomHexColor -->
                 <div id="js_randomHexColor" class="doc">
                     <h3>randomHexColor()</h3>
-
                     <p>Get a random hex color.</p>
 
-                    <div class="snippet">
-<pre>
+<pre class="snippet js">
 var output = randomHexColor()
-</pre><br>
 <pre class="input-output">
 output: '#fbe101'
-</pre>
-                    </div>
+</pre></pre>
 
                     <p>The output will be different each time.</p>
-                    
-                    <div class="code-block">
-<div>/** Get a random hex color. */
+
+<pre class="code-block js">
+/** Get a random hex color. */
 function randomHexColor() {
     return `#${Math.floor(Math.random() * 16**6).toString(16).padStart(6, '0')}`
-}</div>
-                    </div>
+}</pre>
                 </div>
 
                 <!-- randomInt -->
                 <div id="js_randomInt" class="doc">
                     <h3>randomInt(max[, min])</h3>
-
                     <p>Get a random integer between min (inclusive) and max (inclusive).</p>
 
-                    <div class="snippet">
-<pre>
+<pre class="snippet js">
 var output = randomInt(max, min)
-</pre><br>
-<pre class="input-output">
+<span class="input-output">
 max:    6
 min:    1
 output: 3 
 //Could be any of these: [1, 2, 3, 4, 5, 6]
-</pre>
-                    </div>
+</span></pre>
 
                     <p>The output will be different each time and can be any of the other integers.</p>
-
                     <p>If you leave off the 'min' paramater, then it will assume the min is 0.</p>
 
-                    <div class="snippet">
-<pre>
+<pre class="snippet js">
 var output = randomInt(max)
-</pre><br>
-<pre class="input-output">
+<span class="input-output">
 max:    6
 output: 4
 //Could be any of these: [0, 1, 2, 3, 4, 5, 6]
-</pre>
-                    </div>
-                    <br>
-                    <div class="code-block">
-<div>/** Get a random integer between min (inclusive) and max (inclusive).
+</span></pre>
+
+<pre class="code-block js">
+/** Get a random integer between min (inclusive) and max (inclusive).
 * 
 * @param {number} max The upper end of the range
 * @param {number} min Then lower end of the range
@@ -219,60 +185,48 @@ function randomInt(max, min=0) {
     }
 
     return Math.floor(Math.random() * (max - min + 1) + min);  
-}</div>
-                    </div>
+}</pre>
                 </div>
 
                 <!-- clamp -->
                 <div id="js_clamp" class="doc">
                     <h3>clamp(number, max, min)</h3>
-
                     <p>Make sure number is within a given range.</p>
-
                     <p>If the number is between the min and max, then the number is passed back unchanged.</p>
 
-                    <div class="snippet">
-<pre>
+<pre class="snippet js">
 var output = clamp(number, min, max)
-</pre><br>
-<pre class="input-output">
+<span class="input-output">
 number: 35
 min:    12
 max:    50
 output: 35
-</pre>
-                    </div>
+</span></pre>
 
                     <p>If the number is greater than the max, then the max is passed back.</p>
 
-                    <div class="snippet">
-<pre>
+<pre class="snippet js">
 var output = clamp(number, min, max)
-</pre><br>
-<pre class="input-output">
+<span class="input-output">
 number: 65
 min:    12
 max:    50
 output: 50
-</pre>
-                    </div>
+</span></pre>
 
                     <p>If the number is less than the min, then the min is passed back.</p>
 
-                    <div class="snippet">
-<pre>
+<pre class="snippet js">
 var output = clamp(number, min, max)
-</pre><br>
-<pre class="input-output">
+<span class="input-output">
 number:  5
 min:    12
 max:    50
 output: 12
-</pre>
-                    </div>
-                    <br>
-                    <div class="code-block">
-<div>/** Make sure number is within a given range.
+</span></pre>
+
+<pre class="code-block js">
+/** Make sure number is within a given range.
 * 
 * @param {number} number The number to be checked 
 * @param {number} min Then lower end of the range
@@ -291,40 +245,35 @@ function clamp(number, min, max) {
     if (number &lt;= min) return min
     if (number &gt;= max) return max
     return number
-}</div>
-                    </div>
+}</pre>
                 </div>
 
                 <!-- copy -->
                 <div id="js_copy" class="doc">
                     <h3>copy(value)</h3>
-
                     <p>Copy a value to the clipboard.</p>
 
-                    <div class="snippet">
-<pre>
+<pre class="snippet js">
 copy(input)
-</pre><br>
-<pre class="input-output">
+<span class="input-output">
 input: "Hello sweety!"
-</pre>
-                    </div>
+</span></pre>
 
                     <p>The value "Hello sweety!" will be copied to the clipboard.</p>
 
-                    <div class="code-block">
-<div>/** Copy a value to the clipboard.
+<pre class="code-block js">
+/** Copy a value to the clipboard.
 * 
 * @param {any} value The value to be copyed to the clipboard.
 */
 function copy(value) {
-    var $temp = $('&lt;input&gt;')
+    var $temp = $('&lt;textarea&gt;')
     $('body').append($temp)
     $temp.val(value.toString()).select()
     document.execCommand('copy')
     $temp.remove()
-}</div>
-                    </div>
+}</pre>
+
                 </div>
             </div>
         </section>
@@ -335,21 +284,13 @@ function copy(value) {
             <div id="layout">
                 <h3>Layout.css</h3>
 
-                <div>
-                    <div class="copyable" data-label="Link">
-                        <div>&lt;link rel="stylesheet" href="https://tomakpo.github.io/MyAPIs/layout.css"&gt;</div> 
-                    </div>
-                </div>
+                <pre class="copyable" data-lang="html">&lt;link rel="stylesheet" href="https://tomakpo.github.io/MyAPIs/layout.css"&gt;</pre> 
 
                 <!-- .hidden -->
                 <div id="css_hidden" class="doc">
                     <h3>.hidden</h3>
-
                     <p>Any element with the class 'hidden' will be removed from the DOM.</p>
-                    
-                    <div class="snippet">
-                        <pre>display: none !important;</pre>
-                    </div>
+                    <pre class="snippet js">display: none !important;</pre>
                 </div>
             </div>
         </section>
@@ -357,7 +298,8 @@ function copy(value) {
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    <script src="./assets/scripts/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
     <script src="./global.js"></script>
+    <script src="./assets/scripts/script.js"></script>
 </body>
 </html>

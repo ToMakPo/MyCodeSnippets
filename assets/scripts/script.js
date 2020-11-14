@@ -1,20 +1,26 @@
-$('.copyable')
+$('.copyable, .code-block')
     .on('click', event => {
         if (event.target.matches('button')) {
             var button = $(event.target)
-            var text = button.parent().find('div').text()
-            
-            copyToClipboard(text)
+            var text = button.parent().text()
+            console.log(text);
+            copy(text)
         }
+    })
+    .append(function() {
+        let self = $(this)
+        let text = self.text()
+        let lang = self.data('lang')
+        self.text('').removeData('lang')
+        
+        return $('<span>')
+                .text(text)
+                .addClass(lang)
     })
     .append($('<button>'))
 
 $('.doc').attr('tabindex', '0')
 
-// for (let block of $('.code-block > *')) {
-//     let text = $(block).text()
-    
-//     text = text.replace(/\/\/.+/, x => `<span class="f-comment">${x}</span>`)
-//     console.log(text);
-//     $(block).text(text)
-// }
+for (let block of $('.code-block, .snippet')) {
+    hljs.highlightBlock(block)
+}
