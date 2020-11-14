@@ -12,9 +12,10 @@
     <main>
         <section id="js-section">
             <h2>JavaScript</h2>
+
             <div id="global">
                 <h3>Global.js</h3>
-
+                
                 <div>
                     <div class="copyable" data-label="Link">
                         <div>&lt;script src="https://tomakpo.github.io/MyAPIs/global.js"&gt;&lt;/script&gt;</div>
@@ -24,7 +25,9 @@
                 <!-- toTitleCase -->
                 <div id="js_toTitleCase" class="doc">
                     <h3>String.prototype.toTitleCase()</h3>
+
                     <p>Convert the string to title case.</p>
+
                     <div class="snippet">
 <pre>
 var output = input.toTitleCase()
@@ -34,6 +37,7 @@ input:  'harry potter and the chamber of secrets'
 output: 'Harry Potter and the Chamber of Secrets'
 </pre>
                     </div>
+
                     <p>Notice certain words like "and" and "the" are not set to uppercase.</p>
 
                     <div class="code-block">
@@ -44,7 +48,7 @@ String.prototype.toTitleCase = function() {
     var x = 5 // test
     let words = this.toLowerCase().split(' ')
     let len = words.length
-    for (let i = 0; i < len; i++) {
+    for (let i = 0; i &lt; len; i++) {
         if (i == 0 || i == len - 1 || !(exceptions.includes(words[i])))
             words[i] = words[i][0].toUpperCase() + words[i].substr(1)
     }
@@ -57,7 +61,9 @@ String.prototype.toTitleCase = function() {
                 <!-- toProperCase -->
                 <div id="js_toProperCase" class="doc">
                     <h3>String.prototype.toProperCase()</h3>
+
                     <p>Convert the string to proper case.</p>
+
                     <div class="snippet">
 <pre>
 var output = input.toProperCase()
@@ -67,6 +73,7 @@ input:  'harry potter and the chamber of secrets'
 output: 'Harry Potter And The Chamber Of Secrets'
 </pre>
                     </div>
+
                     <p>Notice all words are set to uppercase.</p>
                     
                     <div class="code-block">
@@ -76,13 +83,15 @@ String.prototype.toProperCase = function() {
         return txt[0].toUpperCase() + txt.substr(1).toLowerCase();
     })
 }</div>
-                        </div>
+                    </div>
                 </div>
 
                 <!-- toKey -->
                 <div id="js_toKey" class="doc">
                     <h3>String.prototype.toKey([separator])</h3>
+
                     <p>Convert the string to an object key.</p>
+
                     <div class="snippet">
 <pre>
 var output = input.toKey()
@@ -92,14 +101,17 @@ input:  'First Name'
 output: 'firstName'
 </pre>
                     </div>
+
                     <p>
                         If no separator is provided or the separator is "", then the key will be 
                         convereted to camel case.
                     </p>
+
                     <p>
                         If a separator is provided, then it will be converted to lower case and the 
                         white space will be replaced with the separator.
                     </p>
+                    
                     <div class="snippet">
 <pre>
 var output = input.toKey('-')
@@ -108,8 +120,8 @@ var output = input.toKey('-')
 input:  'First Name'
 output: 'first-name'
 </pre>
-                    </div><br>
-
+                    </div>
+                    <br>
                     <div class="code-block">
 <div>/** Convert the string to an object key.
 * 
@@ -135,7 +147,9 @@ String.prototype.toKey = function(separator) {
                 <!-- randomHexColor -->
                 <div id="js_randomHexColor" class="doc">
                     <h3>randomHexColor()</h3>
+
                     <p>Get a random hex color.</p>
+
                     <div class="snippet">
 <pre>
 var output = randomHexColor()
@@ -144,6 +158,7 @@ var output = randomHexColor()
 output: '#fbe101'
 </pre>
                     </div>
+
                     <p>The output will be different each time.</p>
                     
                     <div class="code-block">
@@ -157,7 +172,9 @@ function randomHexColor() {
                 <!-- randomInt -->
                 <div id="js_randomInt" class="doc">
                     <h3>randomInt(max[, min])</h3>
+
                     <p>Get a random integer between min (inclusive) and max (inclusive).</p>
+
                     <div class="snippet">
 <pre>
 var output = randomInt(max, min)
@@ -169,8 +186,11 @@ output: 3
 //Could be any of these: [1, 2, 3, 4, 5, 6]
 </pre>
                     </div>
+
                     <p>The output will be different each time and can be any of the other integers.</p>
+
                     <p>If you leave off the 'min' paramater, then it will assume the min is 0.</p>
+
                     <div class="snippet">
 <pre>
 var output = randomInt(max)
@@ -206,7 +226,9 @@ function randomInt(max, min=0) {
                 <!-- copy -->
                 <div id="js_copy" class="doc">
                     <h3>copy(value)</h3>
+
                     <p>Copy a value to the clipboard.</p>
+
                     <div class="snippet">
 <pre>
 copy(input)
@@ -215,7 +237,9 @@ copy(input)
 input: "Hello sweety!"
 </pre>
                     </div>
+
                     <p>The value "Hello sweety!" will be copied to the clipboard.</p>
+
                     <div class="code-block">
 <div>/** Copy a value to the clipboard.
 * 
@@ -238,6 +262,7 @@ function copy(value) {
 
             <div id="layout">
                 <h3>Layout.css</h3>
+
                 <div>
                     <div class="copyable" data-label="Link">
                         <div>&lt;link rel="stylesheet" href="https://tomakpo.github.io/MyAPIs/layout.css"&gt;</div> 
@@ -247,7 +272,9 @@ function copy(value) {
                 <!-- .hidden -->
                 <div id="css_hidden" class="doc">
                     <h3>.hidden</h3>
+
                     <p>Any element with the class 'hidden' will be removed from the DOM.</p>
+                    
                     <div class="snippet">
                         <pre>display: none !important;</pre>
                     </div>

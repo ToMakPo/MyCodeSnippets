@@ -85,7 +85,7 @@ main section .doc {
 
 main section .doc:focus, main section .doc:hover {
   outline: none;
-  background: #dddd;
+  background: #cccc;
 }
 
 main section .doc h3 {
