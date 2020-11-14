@@ -11,10 +11,10 @@ $('.copyable')
 
 $('.doc').attr('tabindex', '0')
 
-for (let block of $('.code-block > *')) {
-    let text = $(block).text()
+// for (let block of $('.code-block > *')) {
+//     let text = $(block).text()
     
-    text = text.replace(/\/\/.+/, x => `<span class="f-comment">${x}</span>`)
-    console.log(text);
-    $(block).text(text)
-}
+//     text = text.replace(/\/\/.+/, x => `<span class="f-comment">${x}</span>`)
+//     console.log(text);
+//     $(block).text(text)
+// }
