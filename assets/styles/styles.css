@@ -135,6 +135,7 @@ main section .doc h3 {
   font-family: monospace;
   font-size: 1.35rem;
   text-decoration-line: underline;
+  max-width: 100%;
 }
 
 main section .code-block {
