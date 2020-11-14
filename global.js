@@ -46,8 +46,8 @@ function randomHexColor() {
 
 /** Get a random integer between min (inclusive) and max (inclusive).
  * 
- * @param {number} max The larger of the two numbers
- * @param {number} min The smaller of the two numbers
+ * @param {number} max The upper end of the range
+ * @param {number} min Then lower end of the range
  */
 function randomInt(max, min=0) {
     min = Math.ceil(min);
@@ -60,6 +60,27 @@ function randomInt(max, min=0) {
     }
 
     return Math.floor(Math.random() * (max - min + 1) + min);  
+}
+
+/** Make sure number is within a given range.
+ * 
+ * @param {number} number The number to be checked 
+ * @param {number} min Then lower end of the range
+ * @param {number} max The upper end of the range
+ */
+function clamp(number, min, max) {
+    if (min > max) {
+        var temp = min
+        min = max
+        max = temp
+    }
+
+    number = parseFloat(number)
+
+    if (number == NaN) return NaN
+    if (number <= min) return min
+    if (number >= max) return max
+    return number
 }
 
 /** Copy a value to the clipboard.

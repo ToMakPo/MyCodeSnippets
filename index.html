@@ -205,8 +205,8 @@ output: 4
                     <div class="code-block">
 <div>/** Get a random integer between min (inclusive) and max (inclusive).
 * 
-* @param {number} max The larger of the two numbers
-* @param {number} min The smaller of the two numbers
+* @param {number} max The upper end of the range
+* @param {number} min Then lower end of the range
 */
 function randomInt(max, min=0) {
     min = Math.ceil(min);
@@ -219,6 +219,78 @@ function randomInt(max, min=0) {
     }
 
     return Math.floor(Math.random() * (max - min + 1) + min);  
+}</div>
+                    </div>
+                </div>
+
+                <!-- clamp -->
+                <div id="js_clamp" class="doc">
+                    <h3>clamp(number, max, min)</h3>
+
+                    <p>Make sure number is within a given range.</p>
+
+                    <p>If the number is between the min and max, then the number is passed back unchanged.</p>
+
+                    <div class="snippet">
+<pre>
+var output = clamp(number, min, max)
+</pre><br>
+<pre class="input-output">
+number: 35
+min:    12
+max:    50
+output: 35
+</pre>
+                    </div>
+
+                    <p>If the number is greater than the max, then the max is passed back.</p>
+
+                    <div class="snippet">
+<pre>
+var output = clamp(number, min, max)
+</pre><br>
+<pre class="input-output">
+number: 65
+min:    12
+max:    50
+output: 50
+</pre>
+                    </div>
+
+                    <p>If the number is less than the min, then the min is passed back.</p>
+
+                    <div class="snippet">
+<pre>
+var output = clamp(number, min, max)
+</pre><br>
+<pre class="input-output">
+number:  5
+min:    12
+max:    50
+output: 12
+</pre>
+                    </div>
+                    <br>
+                    <div class="code-block">
+<div>/** Make sure number is within a given range.
+* 
+* @param {number} number The number to be checked 
+* @param {number} min Then lower end of the range
+* @param {number} max The upper end of the range
+*/
+function clamp(number, min, max) {
+    if (min > max) {
+        var temp = min
+        min = max
+        max = temp
+    }
+
+    number = parseFloat(number)
+
+    if (number == NaN) return NaN
+    if (number &lt;= min) return min
+    if (number >= max) return max
+    return number
 }</div>
                     </div>
                 </div>
