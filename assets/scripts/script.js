@@ -14,8 +14,9 @@ $('.copyable, .code-block')
         self.text('').removeData('lang')
         
         return $('<span>')
-                .text(text)
-                .addClass(lang)
+                .append($('<span>')
+                    .text(text)
+                    .addClass(lang))
     })
     .append($('<button>'))
 

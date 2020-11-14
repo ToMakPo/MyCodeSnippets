@@ -19,12 +19,20 @@ main section {
 main section .copyable {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
   font-family: monospace;
   background-color: #b9e5ea;
   transition: background-color 0.35s;
-  white-space: pre-wrap;
+  padding: 0;
+}
+
+main section .copyable > span {
+  display: flex;
+  align-self: center;
+  overflow-x: auto;
+  scrollbar-width: none;
   padding: 0.1rem 0 0.1rem 1rem;
+  margin: 0;
 }
 
 main section .copyable:hover {
