@@ -79,7 +79,7 @@ output: 'Harry Potter And The Chamber Of Secrets'
                     <div class="code-block">
 <div>/** Convert the string to proper case. */
 String.prototype.toProperCase = function() {
-    return this.replace(/\w\S*/g, txt => {
+    return this.replace(/\w\S*/g, txt =&gt; {
         return txt[0].toUpperCase() + txt.substr(1).toLowerCase();
     })
 }</div>
@@ -132,7 +132,7 @@ String.prototype.toKey = function(separator) {
     separator = separator || ''
     var str = this
 
-    if (separator == '') str = str.replace(/\w\S*/g, txt => {
+    if (separator == '') str = str.replace(/\w\S*/g, txt =&gt; {
         return txt[0].toUpperCase() + txt.substr(1).toLowerCase();
     })
 
@@ -212,7 +212,7 @@ function randomInt(max, min=0) {
     min = Math.ceil(min);
     max = Math.floor(max);
 
-    if (min > max) {
+    if (min &gt; max) {
         var temp = min
         min = max
         max = temp
@@ -279,7 +279,7 @@ output: 12
 * @param {number} max The upper end of the range
 */
 function clamp(number, min, max) {
-    if (min > max) {
+    if (min &gt; max) {
         var temp = min
         min = max
         max = temp
@@ -289,7 +289,7 @@ function clamp(number, min, max) {
 
     if (number == NaN) return NaN
     if (number &lt;= min) return min
-    if (number >= max) return max
+    if (number &gt;= max) return max
     return number
 }</div>
                     </div>
@@ -318,7 +318,7 @@ input: "Hello sweety!"
 * @param {any} value The value to be copyed to the clipboard.
 */
 function copy(value) {
-    var $temp = $('<input>')
+    var $temp = $('&lt;input&gt;')
     $('body').append($temp)
     $temp.val(value.toString()).select()
     document.execCommand('copy')
