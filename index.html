@@ -29,8 +29,8 @@
 <pre class="snippet js">
 var output = input.toTitleCase()
 <span class="input-output">
-input:  'harry potter and the chamber of secrets'
-output: 'Harry Potter and the Chamber of Secrets'
+input  &lt;&lt; 'harry potter and the chamber of secrets'
+output &gt;&gt; 'Harry Potter and the Chamber of Secrets'
 </span></pre>
 
                     <p>Notice certain words like "and" and "the" are not set to uppercase.</p>
@@ -59,8 +59,8 @@ String.prototype.toTitleCase = function() {
 <pre class="snippet js">
 var output = input.toProperCase()
 <span class="input-output">
-input:  'harry potter and the chamber of secrets'
-output: 'Harry Potter And The Chamber Of Secrets'
+input  &lt;&lt; 'harry potter and the chamber of secrets'
+output &gt;&gt; 'Harry Potter And The Chamber Of Secrets'
 </span></pre>
 
                     <p>Notice all words are set to uppercase.</p>
@@ -82,8 +82,8 @@ String.prototype.toProperCase = function() {
 <pre class="snippet js">
 var output = input.toKey()
 <span class="input-output">
-input:  'First Name'
-output: 'firstName'
+input  &lt;&lt; 'First Name'
+output &gt;&gt; 'firstName'
 </span></pre>
 
                     <p>
@@ -98,8 +98,8 @@ output: 'firstName'
 <pre class="snippet js">
 var output = input.toKey('-')
 <span class="input-output">
-input:  'First Name'
-output: 'first-name'
+input  &lt;&lt; 'First Name'
+output &gt;&gt; 'first-name'
 </span></pre>
 
 <pre class="code-block js">
@@ -130,9 +130,9 @@ String.prototype.toKey = function(separator) {
 
 <pre class="snippet js">
 var output = randomHexColor()
-<pre class="input-output">
-output: '#fbe101'
-</pre></pre>
+<span class="input-output">
+output &gt;&gt; '#fbe101'
+</span></pre>
 
                     <p>The output will be different each time.</p>
 
@@ -151,9 +151,9 @@ function randomHexColor() {
 <pre class="snippet js">
 var output = randomInt(max, min)
 <span class="input-output">
-max:    6
-min:    1
-output: 3 
+max    &lt;&lt; 6
+min    &lt;&lt; 1
+output &gt;&gt; 3 
 //Could be any of these: [1, 2, 3, 4, 5, 6]
 </span></pre>
 
@@ -163,8 +163,8 @@ output: 3
 <pre class="snippet js">
 var output = randomInt(max)
 <span class="input-output">
-max:    6
-output: 4
+max    &lt;&lt; 6
+output &gt;&gt; 4
 //Could be any of these: [0, 1, 2, 3, 4, 5, 6]
 </span></pre>
 
@@ -197,10 +197,10 @@ function randomInt(max, min=0) {
 <pre class="snippet js">
 var output = clamp(number, min, max)
 <span class="input-output">
-number: 35
-min:    12
-max:    50
-output: 35
+number &lt;&lt; 35
+min    &lt;&lt; 12
+max    &lt;&lt; 50
+output &gt;&gt; 35
 </span></pre>
 
                     <p>If the number is greater than the max, then the max is passed back.</p>
@@ -208,10 +208,10 @@ output: 35
 <pre class="snippet js">
 var output = clamp(number, min, max)
 <span class="input-output">
-number: 65
-min:    12
-max:    50
-output: 50
+number &lt;&lt; 65
+min    &lt;&lt; 12
+max    &lt;&lt; 50
+output &gt;&gt; 50
 </span></pre>
 
                     <p>If the number is less than the min, then the min is passed back.</p>
@@ -219,10 +219,10 @@ output: 50
 <pre class="snippet js">
 var output = clamp(number, min, max)
 <span class="input-output">
-number:  5
-min:    12
-max:    50
-output: 12
+number &lt;&lt; 5
+min    &lt;&lt; 12
+max    &lt;&lt; 50
+output &gt;&gt; 12
 </span></pre>
 
 <pre class="code-block js">
@@ -256,7 +256,7 @@ function clamp(number, min, max) {
 <pre class="snippet js">
 copy(input)
 <span class="input-output">
-input: "Hello sweety!"
+input &lt;&lt; "Hello sweety!"
 </span></pre>
 
                     <p>The value "Hello sweety!" will be copied to the clipboard.</p>
