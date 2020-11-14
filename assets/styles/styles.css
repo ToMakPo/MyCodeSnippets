@@ -28,9 +28,8 @@ main section .copyable {
 
 main section .copyable > span {
   display: flex;
-  align-self: center;
+  align-items: center;
   overflow-x: auto;
-  scrollbar-width: none;
   padding: 0.1rem 0 0.1rem 1rem;
   margin: 0;
 }
