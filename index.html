@@ -17,7 +17,7 @@
 
                 <div>
                     <div class="copyable" data-label="Link">
-                        <div>&lt;script src="https://tomakpo.github.io/MyAPIs/global.js"&gt;&lt;/script&gt;</div> 
+                        <div>&lt;script src="https://tomakpo.github.io/MyAPIs/global.js"&gt;&lt;/script&gt;</div>
                     </div>
                 </div>
 
@@ -35,6 +35,23 @@ output: 'Harry Potter and the Chamber of Secrets'
 </pre>
                     </div>
                     <p>Notice certain words like "and" and "the" are not set to uppercase.</p>
+
+                    <div class="code-block">
+<div>/** Convert the string to title case */
+String.prototype.toTitleCase = function() {
+    let exceptions = ['a', 'an', 'the', 'in', 'of', 'and', 'but', 'or', 'for', 'nor', 'yet', 'so', 'at', 'by', 'on', 'to', 'up', 'as']
+    
+    var x = 5 // test
+    let words = this.toLowerCase().split(' ')
+    let len = words.length
+    for (let i = 0; i < len; i++) {
+        if (i == 0 || i == len - 1 || !(exceptions.includes(words[i])))
+            words[i] = words[i][0].toUpperCase() + words[i].substr(1)
+    }
+
+    return words.join(' ')
+}</div>
+                    </div>
                 </div>
 
                 <!-- toProperCase -->
@@ -51,6 +68,15 @@ output: 'Harry Potter And The Chamber Of Secrets'
 </pre>
                     </div>
                     <p>Notice all words are set to uppercase.</p>
+                    
+                    <div class="code-block">
+<div>/** Convert the string to proper case. */
+String.prototype.toProperCase = function() {
+    return this.replace(/\w\S*/g, txt => {
+        return txt[0].toUpperCase() + txt.substr(1).toLowerCase();
+    })
+}</div>
+                        </div>
                 </div>
 
                 <!-- toKey -->
@@ -82,6 +108,27 @@ var output = input.toKey('-')
 input:  'First Name'
 output: 'first-name'
 </pre>
+                    </div><br>
+
+                    <div class="code-block">
+<div>/** Convert the string to an object key.
+* 
+* @param {string} [separator] A string used to separate one word from the next in the resulting String. 
+* If omitted, the words are converted to camel case.
+*/
+String.prototype.toKey = function(separator) {
+    separator = separator || ''
+    var str = this
+
+    if (separator == '') str = str.replace(/\w\S*/g, txt => {
+        return txt[0].toUpperCase() + txt.substr(1).toLowerCase();
+    })
+
+    str = str.replace(' ', separator || '').replace(/[^0-9a-zA-Z_\-]/g, '')
+    str = str[0].toLowerCase() + str.substr(1)
+
+    return str
+}</div>
                     </div>
                 </div>
 
@@ -98,6 +145,13 @@ output: '#fbe101'
 </pre>
                     </div>
                     <p>The output will be different each time.</p>
+                    
+                    <div class="code-block">
+<div>/** Get a random hex color. */
+function randomHexColor() {
+    return `#${Math.floor(Math.random() * 16**6).toString(16).padStart(6, '0')}`
+}</div>
+                    </div>
                 </div>
 
                 <!-- randomInt -->
@@ -127,6 +181,26 @@ output: 4
 //Could be any of these: [0, 1, 2, 3, 4, 5, 6]
 </pre>
                     </div>
+                    <br>
+                    <div class="code-block">
+<div>/** Get a random integer between min (inclusive) and max (inclusive).
+* 
+* @param {number} max The larger of the two numbers
+* @param {number} min The smaller of the two numbers
+*/
+function randomInt(max, min=0) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+
+    if (min > max) {
+        var temp = min
+        min = max
+        max = temp
+    }
+
+    return Math.floor(Math.random() * (max - min + 1) + min);  
+}</div>
+                    </div>
                 </div>
 
                 <!-- copy -->
@@ -142,6 +216,19 @@ input: "Hello sweety!"
 </pre>
                     </div>
                     <p>The value "Hello sweety!" will be copied to the clipboard.</p>
+                    <div class="code-block">
+<div>/** Copy a value to the clipboard.
+* 
+* @param {any} value The value to be copyed to the clipboard.
+*/
+function copy(value) {
+    var $temp = $('<input>')
+    $('body').append($temp)
+    $temp.val(value.toString()).select()
+    document.execCommand('copy')
+    $temp.remove()
+}</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -168,11 +255,6 @@ input: "Hello sweety!"
             </div>
         </section>
     </main>
-
-    <div>
-        <div id="output"></div>
-        <button id="paste">Paste</button>
-    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
