@@ -17,7 +17,7 @@ main .copyable, main .code-block {
   cursor: url("../cursors/copy.cur"), copy;
 }
 
-main .copyable:active, main .copyable .copied, main .code-block:active, main .code-block .copied {
+main .copyable:active, main .copyable.copied, main .code-block:active, main .code-block.copied {
   cursor: url("../cursors/copied.cur"), copy;
 }
 

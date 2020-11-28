@@ -1,12 +1,9 @@
 $('.copyable, .code-block')
-    .on('click', event => {
-        const self = $(event.target)
+    .on('click', function() {
+        const self = $(this)
         copy(self.text())
         self.addClass('copied')
-    })
-    .on('mouseout', event => {
-        const self = $(event.target)
-        self.removeClass('copied')
+        self.on('mouseout', () => self.removeClass('copied'))
     })
     .append(function() {
         let self = $(this)
