@@ -13,6 +13,26 @@ main {
   padding: 0.25rem;
 }
 
+main .copy-button {
+  background-color: inherit;
+  background-image: url(../images/target.svg);
+  background-size: 1.25rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  border-radius: 0.25rem;
+  font-size: 1.5rem;
+  cursor: url("../cursors/copy.cur"), copy;
+  transition: 0.35s;
+}
+
+main .copy-button:focus, main .copy-button:hover {
+  outline: none;
+}
+
 main section {
   margin: 0.5rem;
   padding: 1rem;
@@ -46,25 +66,11 @@ main section .copyable:hover button {
 }
 
 main section .copyable button {
-  background-color: inherit;
-  background-image: url(../images/target.svg);
-  background-size: 1.25rem;
-  background-position: center;
-  background-repeat: no-repeat;
   opacity: 0;
-  padding: 0.5rem;
   margin-right: 0.5rem;
-  width: 2rem;
-  height: 2rem;
-  border: 0;
-  border-radius: 0.25rem;
-  font-size: 1.5rem;
-  cursor: copy;
-  transition: 0.35s;
 }
 
 main section .copyable button:focus, main section .copyable button:hover {
-  outline: none;
   background-color: #57c2cc;
   opacity: 1;
 }
@@ -215,23 +221,10 @@ main section .code-block:hover button {
 
 main section .code-block button {
   position: absolute;
-  top: 0.25rem;
-  right: 0.25rem;
+  top: 0.5rem;
+  right: 0.5rem;
   background-color: #dddd;
-  background-image: url(../images/target.svg);
-  background-size: 1.25rem;
-  background-position: center;
-  background-repeat: no-repeat;
   opacity: 0;
-  padding: 0.5rem;
-  margin: 0.5rem;
-  width: 2rem;
-  height: 2rem;
-  border: 0;
-  border-radius: 0.25rem;
-  font-size: 1.5rem;
-  cursor: copy;
-  transition: 0.35s;
 }
 
 main section .code-block button:focus, main section .code-block button:hover {

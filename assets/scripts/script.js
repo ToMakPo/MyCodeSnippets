@@ -18,7 +18,7 @@ $('.copyable, .code-block')
                     .text(text)
                     .addClass(lang))
     })
-    .append($('<button>'))
+    .append($('<button>').addClass('copy-button'))
 
 $('.doc').attr('tabindex', '0')
 
