@@ -3,7 +3,12 @@ $('.copyable, .code-block')
         const self = $(this)
         copy(self.text())
         self.addClass('copied')
-        self.on('mouseout', () => self.removeClass('copied'))
+        
+        self.on('mouseleave', function() {
+            const self = $(this)
+            self.removeClass('copied')
+            self.off('mouseleave')
+        })
     })
     .append(function() {
         let self = $(this)
