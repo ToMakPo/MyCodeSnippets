@@ -33,6 +33,10 @@ main .copy-button:focus, main .copy-button:hover {
   outline: none;
 }
 
+main .copy-button:active {
+  cursor: url("../cursors/copyed.cur"), copy;
+}
+
 main section {
   margin: 0.5rem;
   padding: 1rem;
@@ -61,21 +65,21 @@ main section .copyable:hover {
   background-color: #a5dee4;
 }
 
-main section .copyable:hover button {
+main section .copyable:hover .copy-button {
   opacity: 0.5;
 }
 
-main section .copyable button {
+main section .copyable .copy-button {
   opacity: 0;
   margin-right: 0.5rem;
 }
 
-main section .copyable button:focus, main section .copyable button:hover {
+main section .copyable .copy-button:focus, main section .copyable .copy-button:hover {
   background-color: #57c2cc;
   opacity: 1;
 }
 
-main section .copyable button:active {
+main section .copyable .copy-button:active {
   background-color: #7ed0d8;
 }
 
@@ -215,11 +219,11 @@ main section .code-block > span .hljs-doctag, main section .code-block > span .h
   font-weight: 700;
 }
 
-main section .code-block:hover button {
+main section .code-block:hover .copy-button {
   opacity: 0.25;
 }
 
-main section .code-block button {
+main section .code-block .copy-button {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
@@ -227,12 +231,12 @@ main section .code-block button {
   opacity: 0;
 }
 
-main section .code-block button:focus, main section .code-block button:hover {
+main section .code-block .copy-button:focus, main section .code-block .copy-button:hover {
   outline: none;
   opacity: 1;
 }
 
-main section .code-block button:active {
+main section .code-block .copy-button:active {
   background-color: #92d7de;
 }
 
