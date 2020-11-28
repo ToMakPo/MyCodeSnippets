@@ -13,28 +13,12 @@ main {
   padding: 0.25rem;
 }
 
-main .copy-button {
-  background-color: inherit;
-  background-image: url(../images/target.svg);
-  background-size: 1.25rem;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 0.5rem;
-  width: 2rem;
-  height: 2rem;
-  border: 0;
-  border-radius: 0.25rem;
-  font-size: 1.5rem;
+main .copyable, main .code-block {
   cursor: url("../cursors/copy.cur"), copy;
-  transition: 0.35s;
 }
 
-main .copy-button:focus, main .copy-button:hover {
-  outline: none;
-}
-
-main .copy-button:active {
-  cursor: url("../cursors/copyed.cur"), copy;
+main .copyable:active, main .copyable .copied, main .code-block:active, main .code-block .copied {
+  cursor: url("../cursors/copied.cur"), copy;
 }
 
 main section {

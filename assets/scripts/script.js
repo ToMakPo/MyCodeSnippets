@@ -1,11 +1,12 @@
 $('.copyable, .code-block')
     .on('click', event => {
-        if (event.target.matches('button')) {
-            var button = $(event.target)
-            var text = button.parent().text()
-            console.log(text);
-            copy(text)
-        }
+        const self = $(event.target)
+        copy(self.text())
+        self.addClass('copied')
+    })
+    .on('mouseout', event => {
+        const self = $(event.target)
+        self.removeClass('copied')
     })
     .append(function() {
         let self = $(this)
@@ -18,7 +19,6 @@ $('.copyable, .code-block')
                     .text(text)
                     .addClass(lang))
     })
-    .append($('<button>').addClass('copy-button'))
 
 $('.doc').attr('tabindex', '0')
 
