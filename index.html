@@ -318,13 +318,14 @@ function copy(value) {
  * module this is being called in.
  */
 (async () => {
-    const moduleName = 'moduleName' // &lt;-- this needs to match the name of the module.
+    const modualName = 'index' // &lt;-- this needs to match the name of the page.
     const splitPath = process.argv[1].split('\\').pop().replace('.js', '')
-    if (splitPath == moduleName || process.argv.length == 2) {
+    if (splitPath == modualName && process.argv.length > 2) {
+
         const returned = await eval(process.argv[2])
-        
+
         const formated = (() => {
-            if (typeof returned == 'object') JSON.stringify(returned)
+            if (typeof returned == 'object') return JSON.stringify(returned)
             if (typeof returned == 'function') return returned.toString()
             return returned
         })()
