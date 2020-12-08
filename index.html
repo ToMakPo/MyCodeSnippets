@@ -294,6 +294,47 @@ function copy(value) {
                 </div>
             </div>
         </section>
+        
+        <section id="css-section">
+            <h2>Node</h2>
+
+            <div id="layout">
+                <h3>Code Blocks</h3>
+
+                <!-- command line call -->
+                <div id="node_commandLineCall" class="doc">
+                    <h3>Command Line Call</h3>
+                    <p>Function that takes a value passed in from the terminal command line and processes it.</p>
+                    <p>You can pass in any value and to the command line and it will log it's return value.</p>
+                    <p>Before doing anything, you need to update the `moduleName` to match the name of the module this is being called in.</p>
+                    <!-- <pre class="snippet js">display: none !important;</pre> -->
+                    
+<pre class="code-block js">
+/**Function that takes a value passed in from the terminal command line and processes it.
+ * 
+ * You can pass in any value and to the command line and it will log it's return value.
+ * 
+ * Before doing anything, you need to update the `moduleName` to match the name of the
+ * module this is being called in.
+ */
+(async () => {
+    const moduleName = 'moduleName' // &lt;-- this needs to match the name of the module.
+    const splitPath = process.argv[1].split('\\').pop().replace('.js', '')
+    if (splitPath == moduleName || process.argv.length == 2) {
+        let returned = await eval(process.argv[2])
+        
+        const formated = (() => {
+            if (typeof returned == 'object') JSON.stringify(returned)
+            if (typeof returned == 'function') return returned.toString()
+            return returned
+        })()
+
+        console.log(formated)
+    }
+})()</pre>
+                </div>
+            </div>
+        </section>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
